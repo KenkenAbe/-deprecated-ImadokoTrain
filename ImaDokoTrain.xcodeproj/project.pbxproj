@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		962E62051F9F0F960094F029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62041F9F0F960094F029 /* AppDelegate.swift */; };
+		962E62071F9F0F960094F029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62061F9F0F960094F029 /* ViewController.swift */; };
+		962E620A1F9F0F960094F029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962E62081F9F0F960094F029 /* Main.storyboard */; };
+		962E620C1F9F0F960094F029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962E620B1F9F0F960094F029 /* Assets.xcassets */; };
+		962E620F1F9F0F960094F029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962E620D1F9F0F960094F029 /* LaunchScreen.storyboard */; };
+		962E621A1F9F0F960094F029 /* ImaDokoTrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62191F9F0F960094F029 /* ImaDokoTrainTests.swift */; };
+		962E62251F9F0F960094F029 /* ImaDokoTrainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62241F9F0F960094F029 /* ImaDokoTrainUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		962E62161F9F0F960094F029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 962E61F91F9F0F960094F029 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 962E62001F9F0F960094F029;
+			remoteInfo = ImaDokoTrain;
+		};
+		962E62211F9F0F960094F029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 962E61F91F9F0F960094F029 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 962E62001F9F0F960094F029;
+			remoteInfo = ImaDokoTrain;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		962E62011F9F0F960094F029 /* ImaDokoTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImaDokoTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		962E62041F9F0F960094F029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		962E62061F9F0F960094F029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		962E62091F9F0F960094F029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		962E620B1F9F0F960094F029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		962E620E1F9F0F960094F029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		962E62101F9F0F960094F029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		962E62151F9F0F960094F029 /* ImaDokoTrainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaDokoTrainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		962E62191F9F0F960094F029 /* ImaDokoTrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaDokoTrainTests.swift; sourceTree = "<group>"; };
+		962E621B1F9F0F960094F029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		962E62201F9F0F960094F029 /* ImaDokoTrainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaDokoTrainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		962E62241F9F0F960094F029 /* ImaDokoTrainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaDokoTrainUITests.swift; sourceTree = "<group>"; };
+		962E62261F9F0F960094F029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		962E61FE1F9F0F960094F029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962E62121F9F0F960094F029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962E621D1F9F0F960094F029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		962E61F81F9F0F960094F029 = {
+			isa = PBXGroup;
+			children = (
+				962E62031F9F0F960094F029 /* ImaDokoTrain */,
+				962E62181F9F0F960094F029 /* ImaDokoTrainTests */,
+				962E62231F9F0F960094F029 /* ImaDokoTrainUITests */,
+				962E62021F9F0F960094F029 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		962E62021F9F0F960094F029 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				962E62011F9F0F960094F029 /* ImaDokoTrain.app */,
+				962E62151F9F0F960094F029 /* ImaDokoTrainTests.xctest */,
+				962E62201F9F0F960094F029 /* ImaDokoTrainUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		962E62031F9F0F960094F029 /* ImaDokoTrain */ = {
+			isa = PBXGroup;
+			children = (
+				962E62041F9F0F960094F029 /* AppDelegate.swift */,
+				962E62061F9F0F960094F029 /* ViewController.swift */,
+				962E62081F9F0F960094F029 /* Main.storyboard */,
+				962E620B1F9F0F960094F029 /* Assets.xcassets */,
+				962E620D1F9F0F960094F029 /* LaunchScreen.storyboard */,
+				962E62101F9F0F960094F029 /* Info.plist */,
+			);
+			path = ImaDokoTrain;
+			sourceTree = "<group>";
+		};
+		962E62181F9F0F960094F029 /* ImaDokoTrainTests */ = {
+			isa = PBXGroup;
+			children = (
+				962E62191F9F0F960094F029 /* ImaDokoTrainTests.swift */,
+				962E621B1F9F0F960094F029 /* Info.plist */,
+			);
+			path = ImaDokoTrainTests;
+			sourceTree = "<group>";
+		};
+		962E62231F9F0F960094F029 /* ImaDokoTrainUITests */ = {
+			isa = PBXGroup;
+			children = (
+				962E62241F9F0F960094F029 /* ImaDokoTrainUITests.swift */,
+				962E62261F9F0F960094F029 /* Info.plist */,
+			);
+			path = ImaDokoTrainUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		962E62001F9F0F960094F029 /* ImaDokoTrain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 962E62291F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrain" */;
+			buildPhases = (
+				962E61FD1F9F0F960094F029 /* Sources */,
+				962E61FE1F9F0F960094F029 /* Frameworks */,
+				962E61FF1F9F0F960094F029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImaDokoTrain;
+			productName = ImaDokoTrain;
+			productReference = 962E62011F9F0F960094F029 /* ImaDokoTrain.app */;
+			productType = "com.apple.product-type.application";
+		};
+		962E62141F9F0F960094F029 /* ImaDokoTrainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 962E622C1F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrainTests" */;
+			buildPhases = (
+				962E62111F9F0F960094F029 /* Sources */,
+				962E62121F9F0F960094F029 /* Frameworks */,
+				962E62131F9F0F960094F029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				962E62171F9F0F960094F029 /* PBXTargetDependency */,
+			);
+			name = ImaDokoTrainTests;
+			productName = ImaDokoTrainTests;
+			productReference = 962E62151F9F0F960094F029 /* ImaDokoTrainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		962E621F1F9F0F960094F029 /* ImaDokoTrainUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 962E622F1F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrainUITests" */;
+			buildPhases = (
+				962E621C1F9F0F960094F029 /* Sources */,
+				962E621D1F9F0F960094F029 /* Frameworks */,
+				962E621E1F9F0F960094F029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				962E62221F9F0F960094F029 /* PBXTargetDependency */,
+			);
+			name = ImaDokoTrainUITests;
+			productName = ImaDokoTrainUITests;
+			productReference = 962E62201F9F0F960094F029 /* ImaDokoTrainUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		962E61F91F9F0F960094F029 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = KentaroAbe;
+				TargetAttributes = {
+					962E62001F9F0F960094F029 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					962E62141F9F0F960094F029 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 962E62001F9F0F960094F029;
+					};
+					962E621F1F9F0F960094F029 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 962E62001F9F0F960094F029;
+					};
+				};
+			};
+			buildConfigurationList = 962E61FC1F9F0F960094F029 /* Build configuration list for PBXProject "ImaDokoTrain" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 962E61F81F9F0F960094F029;
+			productRefGroup = 962E62021F9F0F960094F029 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				962E62001F9F0F960094F029 /* ImaDokoTrain */,
+				962E62141F9F0F960094F029 /* ImaDokoTrainTests */,
+				962E621F1F9F0F960094F029 /* ImaDokoTrainUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		962E61FF1F9F0F960094F029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962E620F1F9F0F960094F029 /* LaunchScreen.storyboard in Resources */,
+				962E620C1F9F0F960094F029 /* Assets.xcassets in Resources */,
+				962E620A1F9F0F960094F029 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962E62131F9F0F960094F029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962E621E1F9F0F960094F029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		962E61FD1F9F0F960094F029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962E62071F9F0F960094F029 /* ViewController.swift in Sources */,
+				962E62051F9F0F960094F029 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962E62111F9F0F960094F029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962E621A1F9F0F960094F029 /* ImaDokoTrainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962E621C1F9F0F960094F029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962E62251F9F0F960094F029 /* ImaDokoTrainUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		962E62171F9F0F960094F029 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 962E62001F9F0F960094F029 /* ImaDokoTrain */;
+			targetProxy = 962E62161F9F0F960094F029 /* PBXContainerItemProxy */;
+		};
+		962E62221F9F0F960094F029 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 962E62001F9F0F960094F029 /* ImaDokoTrain */;
+			targetProxy = 962E62211F9F0F960094F029 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		962E62081F9F0F960094F029 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				962E62091F9F0F960094F029 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		962E620D1F9F0F960094F029 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				962E620E1F9F0F960094F029 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		962E62271F9F0F960094F029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		962E62281F9F0F960094F029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		962E622A1F9F0F960094F029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YN493UFZE;
+				INFOPLIST_FILE = ImaDokoTrain/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akbart.app.ImaDokoTrain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		962E622B1F9F0F960094F029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YN493UFZE;
+				INFOPLIST_FILE = ImaDokoTrain/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akbart.app.ImaDokoTrain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		962E622D1F9F0F960094F029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YN493UFZE;
+				INFOPLIST_FILE = ImaDokoTrainTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akbart.app.ImaDokoTrainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImaDokoTrain.app/ImaDokoTrain";
+			};
+			name = Debug;
+		};
+		962E622E1F9F0F960094F029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YN493UFZE;
+				INFOPLIST_FILE = ImaDokoTrainTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akbart.app.ImaDokoTrainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImaDokoTrain.app/ImaDokoTrain";
+			};
+			name = Release;
+		};
+		962E62301F9F0F960094F029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YN493UFZE;
+				INFOPLIST_FILE = ImaDokoTrainUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akbart.app.ImaDokoTrainUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ImaDokoTrain;
+			};
+			name = Debug;
+		};
+		962E62311F9F0F960094F029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9YN493UFZE;
+				INFOPLIST_FILE = ImaDokoTrainUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.akbart.app.ImaDokoTrainUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ImaDokoTrain;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		962E61FC1F9F0F960094F029 /* Build configuration list for PBXProject "ImaDokoTrain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				962E62271F9F0F960094F029 /* Debug */,
+				962E62281F9F0F960094F029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		962E62291F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				962E622A1F9F0F960094F029 /* Debug */,
+				962E622B1F9F0F960094F029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		962E622C1F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				962E622D1F9F0F960094F029 /* Debug */,
+				962E622E1F9F0F960094F029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		962E622F1F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrainUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				962E62301F9F0F960094F029 /* Debug */,
+				962E62311F9F0F960094F029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 962E61F91F9F0F960094F029 /* Project object */;
+}
