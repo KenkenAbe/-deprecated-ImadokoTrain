@@ -7,15 +7,42 @@
 //
 
 import UIKit
+import SwiftyJSON
+import RealmSwift
+import Alamofire
+
+class LineData:Object{
+    @objc dynamic var dataID = 0
+    @objc dynamic var OperatorName = "" //運行会社
+    @objc dynamic var lineName = "" //路線名
+    @objc dynamic var isLtdEXP = false //特急（JR線の特急は遅延時分を表示しない）
+    @objc dynamic var lineID = 0 //路線ID
+    @objc dynamic var lineColor = "" //路線カラー（HTMLカラー)
+    @objc dynamic var isUnique = false //JREの首都圏列車位置情報とは違う法則性のURLを使っているか
+    @objc dynamic var dataURL = "" //isUniqueがtrueの場合はURLを記録
+    @objc dynamic var type = "" //データタイプ（例：JRE/京王->HTML 東急/東京メトロ->JSON）
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var lineID = 0
+    var lineName = [String]()
+    var TokyoMetroStationData:JSON? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let metroURL = URL(string: "https://api.tokyometroapp.jp/api/v2/datapoints?rdf:type=odpt:Station&acl:consumerKey=5f95c806e61e454551b8cb6688a49dbd4b187b8c042bdf9d61c0fd1983a88091")
+        
+        Alamofire.request(metroURL!).responseJSON{response in
+            if response.result.value != nil{
+                self.TokyoMetroStationData = JSON(response.result.value)
+            }
+        }
+        
         return true
     }
 
@@ -31,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

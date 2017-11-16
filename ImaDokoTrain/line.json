@@ -1,0 +1,45 @@
+{
+    "line":{
+        "0":{
+            "company":"JRE",
+            "Name":"京浜東北線",
+            "LineID":"40",
+            "Color":"",
+            "unique":"false",
+            "LimitedEXP":"false"
+        },
+        "1":{
+            "company":"JRE",
+            "Name":"宇都宮線",
+            "LineID":"34",
+            "Color":"",
+            "unique":"false",
+            "LimitedEXP":"false"
+        },
+        "2":{
+            "company":"JRE",
+            "Name":"埼京線",
+            "LineID":"43",
+            "Color":"",
+            "unique":"false",
+            "LimitedEXP":"false"
+        },
+        "3":{
+            "company":"JRE",
+            "Name":"中央・総武線",
+            "LineID":"56",
+            "Color":"",
+            "unique":"false",
+            "LimitedEXP":"false"
+        },
+        "4":{
+            "company":"JRE",
+            "Name":"東北・北海道新幹線",
+            "LineID":"88",
+            "Color":"",
+            "unique":"false",
+            "LimitedEXP":"true"
+        }
+    }
+}
+//

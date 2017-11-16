@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AA67E3A7A1D6906078EAE6A /* Pods_ImaDokoTrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F703F5A07F2A193CC8BA5D89 /* Pods_ImaDokoTrain.framework */; };
+		8207C6FF0E29A38F2BC44B73 /* Pods_ImaDokoTrainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85496C8A30F7435354123254 /* Pods_ImaDokoTrainTests.framework */; };
+		960FEEDD1FB08F7E00B09F12 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960FEEDC1FB08F7E00B09F12 /* TableViewCell.swift */; };
+		960FEEDF1FB09BC300B09F12 /* TohokuShinkansen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 960FEEDE1FB09BC200B09F12 /* TohokuShinkansen.jpg */; };
 		962E62051F9F0F960094F029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62041F9F0F960094F029 /* AppDelegate.swift */; };
 		962E62071F9F0F960094F029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62061F9F0F960094F029 /* ViewController.swift */; };
 		962E620A1F9F0F960094F029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962E62081F9F0F960094F029 /* Main.storyboard */; };
@@ -14,6 +18,9 @@
 		962E620F1F9F0F960094F029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962E620D1F9F0F960094F029 /* LaunchScreen.storyboard */; };
 		962E621A1F9F0F960094F029 /* ImaDokoTrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62191F9F0F960094F029 /* ImaDokoTrainTests.swift */; };
 		962E62251F9F0F960094F029 /* ImaDokoTrainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62241F9F0F960094F029 /* ImaDokoTrainUITests.swift */; };
+		963AD59A1FBDAB2E00FFAF6C /* other_stationDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5991FBDAB2E00FFAF6C /* other_stationDict.json */; };
+		963AD59C1FBDAB3400FFAF6C /* metro_stationDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 963AD59B1FBDAB3400FFAF6C /* metro_stationDict.json */; };
+		A1FB96D0B23FFEA02E3BF65B /* Pods_ImaDokoTrainUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF63CC3A27E957C08E2382C /* Pods_ImaDokoTrainUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BF63CC3A27E957C08E2382C /* Pods_ImaDokoTrainUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImaDokoTrainUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C3D098A60CE6B27A27C11D /* Pods-ImaDokoTrainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrainTests/Pods-ImaDokoTrainTests.release.xcconfig"; sourceTree = "<group>"; };
+		319FB852DB4DF3B652165046 /* Pods-ImaDokoTrain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrain.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrain/Pods-ImaDokoTrain.release.xcconfig"; sourceTree = "<group>"; };
+		7473DCCCB8A5B87CCC39CA20 /* Pods-ImaDokoTrainUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrainUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrainUITests/Pods-ImaDokoTrainUITests.release.xcconfig"; sourceTree = "<group>"; };
+		85496C8A30F7435354123254 /* Pods_ImaDokoTrainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImaDokoTrainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D47A1817B72F64A9572B663 /* Pods-ImaDokoTrain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrain/Pods-ImaDokoTrain.debug.xcconfig"; sourceTree = "<group>"; };
+		960FEEDC1FB08F7E00B09F12 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		960FEEDE1FB09BC200B09F12 /* TohokuShinkansen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TohokuShinkansen.jpg; sourceTree = "<group>"; };
 		962E62011F9F0F960094F029 /* ImaDokoTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImaDokoTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		962E62041F9F0F960094F029 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		962E62061F9F0F960094F029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +62,11 @@
 		962E62201F9F0F960094F029 /* ImaDokoTrainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaDokoTrainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		962E62241F9F0F960094F029 /* ImaDokoTrainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaDokoTrainUITests.swift; sourceTree = "<group>"; };
 		962E62261F9F0F960094F029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963AD5991FBDAB2E00FFAF6C /* other_stationDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = other_stationDict.json; sourceTree = "<group>"; };
+		963AD59B1FBDAB3400FFAF6C /* metro_stationDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = metro_stationDict.json; sourceTree = "<group>"; };
+		A6CB4D35F4AD1CAADD11B852 /* Pods-ImaDokoTrainUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrainUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrainUITests/Pods-ImaDokoTrainUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ABBDD28E49235AC7680573BA /* Pods-ImaDokoTrainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrainTests/Pods-ImaDokoTrainTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F703F5A07F2A193CC8BA5D89 /* Pods_ImaDokoTrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImaDokoTrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA67E3A7A1D6906078EAE6A /* Pods_ImaDokoTrain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8207C6FF0E29A38F2BC44B73 /* Pods_ImaDokoTrainTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1FB96D0B23FFEA02E3BF65B /* Pods_ImaDokoTrainUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +104,8 @@
 				962E62181F9F0F960094F029 /* ImaDokoTrainTests */,
 				962E62231F9F0F960094F029 /* ImaDokoTrainUITests */,
 				962E62021F9F0F960094F029 /* Products */,
+				D3F6244AAEB6C8CB6C64141A /* Pods */,
+				9BC2A2062905B8E161073AE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +125,13 @@
 				962E62041F9F0F960094F029 /* AppDelegate.swift */,
 				962E62061F9F0F960094F029 /* ViewController.swift */,
 				962E62081F9F0F960094F029 /* Main.storyboard */,
+				960FEEDC1FB08F7E00B09F12 /* TableViewCell.swift */,
 				962E620B1F9F0F960094F029 /* Assets.xcassets */,
 				962E620D1F9F0F960094F029 /* LaunchScreen.storyboard */,
 				962E62101F9F0F960094F029 /* Info.plist */,
+				963AD5991FBDAB2E00FFAF6C /* other_stationDict.json */,
+				963AD59B1FBDAB3400FFAF6C /* metro_stationDict.json */,
+				960FEEDE1FB09BC200B09F12 /* TohokuShinkansen.jpg */,
 			);
 			path = ImaDokoTrain;
 			sourceTree = "<group>";
@@ -125,6 +154,29 @@
 			path = ImaDokoTrainUITests;
 			sourceTree = "<group>";
 		};
+		9BC2A2062905B8E161073AE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F703F5A07F2A193CC8BA5D89 /* Pods_ImaDokoTrain.framework */,
+				85496C8A30F7435354123254 /* Pods_ImaDokoTrainTests.framework */,
+				0BF63CC3A27E957C08E2382C /* Pods_ImaDokoTrainUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3F6244AAEB6C8CB6C64141A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D47A1817B72F64A9572B663 /* Pods-ImaDokoTrain.debug.xcconfig */,
+				319FB852DB4DF3B652165046 /* Pods-ImaDokoTrain.release.xcconfig */,
+				ABBDD28E49235AC7680573BA /* Pods-ImaDokoTrainTests.debug.xcconfig */,
+				18C3D098A60CE6B27A27C11D /* Pods-ImaDokoTrainTests.release.xcconfig */,
+				A6CB4D35F4AD1CAADD11B852 /* Pods-ImaDokoTrainUITests.debug.xcconfig */,
+				7473DCCCB8A5B87CCC39CA20 /* Pods-ImaDokoTrainUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 962E62291F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrain" */;
 			buildPhases = (
+				0FCD76DC29BDE8FAABB87F73 /* [CP] Check Pods Manifest.lock */,
 				962E61FD1F9F0F960094F029 /* Sources */,
 				962E61FE1F9F0F960094F029 /* Frameworks */,
 				962E61FF1F9F0F960094F029 /* Resources */,
+				105870F8DD0E7D8A7EE65D3C /* [CP] Embed Pods Frameworks */,
+				E72C2E7FD0E5B5E2BBB3E5BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 962E622C1F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrainTests" */;
 			buildPhases = (
+				2339E9BB95C25455F100E7F0 /* [CP] Check Pods Manifest.lock */,
 				962E62111F9F0F960094F029 /* Sources */,
 				962E62121F9F0F960094F029 /* Frameworks */,
 				962E62131F9F0F960094F029 /* Resources */,
+				1D54E1BAA51AEF282E7394E6 /* [CP] Embed Pods Frameworks */,
+				67BCA7725B9B713F0CCCD4A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 962E622F1F9F0F960094F029 /* Build configuration list for PBXNativeTarget "ImaDokoTrainUITests" */;
 			buildPhases = (
+				EC2458FD9C3DE60AC6C9B988 /* [CP] Check Pods Manifest.lock */,
 				962E621C1F9F0F960094F029 /* Sources */,
 				962E621D1F9F0F960094F029 /* Frameworks */,
 				962E621E1F9F0F960094F029 /* Resources */,
+				7ED0B8CD94DB7FA3B810C2B1 /* [CP] Embed Pods Frameworks */,
+				92582F253F2C5D51A055E66F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,7 +295,10 @@
 			files = (
 				962E620F1F9F0F960094F029 /* LaunchScreen.storyboard in Resources */,
 				962E620C1F9F0F960094F029 /* Assets.xcassets in Resources */,
+				963AD59C1FBDAB3400FFAF6C /* metro_stationDict.json in Resources */,
 				962E620A1F9F0F960094F029 /* Main.storyboard in Resources */,
+				960FEEDF1FB09BC300B09F12 /* TohokuShinkansen.jpg in Resources */,
+				963AD59A1FBDAB2E00FFAF6C /* other_stationDict.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,11 +318,172 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FCD76DC29BDE8FAABB87F73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImaDokoTrain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		105870F8DD0E7D8A7EE65D3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ImaDokoTrain/Pods-ImaDokoTrain-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaDokoTrain/Pods-ImaDokoTrain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D54E1BAA51AEF282E7394E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaDokoTrainTests/Pods-ImaDokoTrainTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2339E9BB95C25455F100E7F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImaDokoTrainTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67BCA7725B9B713F0CCCD4A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaDokoTrainTests/Pods-ImaDokoTrainTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7ED0B8CD94DB7FA3B810C2B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaDokoTrainUITests/Pods-ImaDokoTrainUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92582F253F2C5D51A055E66F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaDokoTrainUITests/Pods-ImaDokoTrainUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E72C2E7FD0E5B5E2BBB3E5BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaDokoTrain/Pods-ImaDokoTrain-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2458FD9C3DE60AC6C9B988 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImaDokoTrainUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		962E61FD1F9F0F960094F029 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960FEEDD1FB08F7E00B09F12 /* TableViewCell.swift in Sources */,
 				962E62071F9F0F960094F029 /* ViewController.swift in Sources */,
 				962E62051F9F0F960094F029 /* AppDelegate.swift in Sources */,
 			);
@@ -424,6 +649,7 @@
 		};
 		962E622A1F9F0F960094F029 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D47A1817B72F64A9572B663 /* Pods-ImaDokoTrain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +665,7 @@
 		};
 		962E622B1F9F0F960094F029 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319FB852DB4DF3B652165046 /* Pods-ImaDokoTrain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +681,7 @@
 		};
 		962E622D1F9F0F960094F029 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABBDD28E49235AC7680573BA /* Pods-ImaDokoTrainTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +699,7 @@
 		};
 		962E622E1F9F0F960094F029 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18C3D098A60CE6B27A27C11D /* Pods-ImaDokoTrainTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +717,7 @@
 		};
 		962E62301F9F0F960094F029 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6CB4D35F4AD1CAADD11B852 /* Pods-ImaDokoTrainUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +734,7 @@
 		};
 		962E62311F9F0F960094F029 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7473DCCCB8A5B87CCC39CA20 /* Pods-ImaDokoTrainUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
