@@ -10,11 +10,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImaDokoTrain/ViewController.swift"
-            timestampString = "531721238.660475"
+            timestampString = "532528856.5573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532528856.557789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in ImaDokoTrain.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532528046.746752"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in ImaDokoTrain.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532528046.74872"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532528856.558065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

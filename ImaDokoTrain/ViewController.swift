@@ -49,6 +49,12 @@ extension UIColor { //HTMLカラーコードからUIColorを作成するExtensio
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    let TokyuTY_URL = URL(string: "https://tokyu-tid.s3.amazonaws.com/toyoko.json")
+    let TokyuDT_URL = URL(string: "https://tokyu-tid.s3.amazonaws.com/dento.json")
+    let TokyuMG_URL = URL(string: "https://tokyu-tid.s3.amazonaws.com/meguro.json")
+    let TokyuOM_URL = URL(string: "https://tokyu-tid.s3.amazonaws.com/oimachi.json")
+    let TokyoMetro_AccessToken = "5f95c806e61e454551b8cb6688a49dbd4b187b8c042bdf9d61c0fd1983a88091"
+    
     @IBOutlet var Bar: UINavigationBar!
     
     var refreshControl:UIRefreshControl!
@@ -73,6 +79,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     basedata.dataID = i
                     basedata.OperatorName = String(describing:json["line"][String(describing:i)]["company"])
                     basedata.lineID = Int(String(describing:json["line"][String(describing:i)]["LineID"]))!
+                    if Int(String(describing:json["line"][String(describing:i)]["LineID"]))! >= 10000{
+                        basedata.lineCode = String(describing:json["line"][String(describing:i)]["LineCode"])
+                    }
                     basedata.lineName = String(describing:json["line"][String(describing:i)]["Name"])
                     basedata.lineColor = String(describing:json["line"][String(describing:i)]["Color"])
                     if (Bool(String(describing:json["line"][String(describing:i)]["unique"]))) == true{
@@ -135,7 +144,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let database = try! Realm()
         let data = database.objects(LineData.self)
         
-        cell.LineName?.text? = data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineName //路線名
+        switch data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].OperatorName{
+        case "JRE":
+            cell.LineName?.text? = "JR \(data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineName)"
+        case "TokyoMetro":
+            cell.LineName?.text? = "地下鉄 \(data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineName)"
+        default:
+            cell.LineName?.text? = "不明"
+        }
+         //路線名
         
         if data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].isLtdEXP == true{ //新幹線・特急の場合は遅れ時分を表示しない
             cell.DelayTime?.text? = "この路線は遅れ情報を提供していません"
@@ -145,12 +162,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 let json = JSON(response.result.value)
                 print(json)
                 cell.DelayTime?.text? = "最大遅れ時分：\(String(describing:json["maxDelayInfos"][String(describing:data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID)]["maxDelay"]))分"
-                
-                if Int(String(describing:json["maxDelayInfos"][String(describing:data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID)]["maxDelay"]))! > 0{
-                    cell.DelayTime?.textColor = UIColor.red
-                }else{ //遅れがない場合（最大遅れ時分が0の場合）は遅れがないことを表示する
-                    cell.DelayTime?.text? = "現在遅れはありません"
-                    cell.DelayTime?.textColor = UIColor.black
+                if data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID >= 10000{
+                    cell.DelayTime?.text? = "この路線は遅れ情報を提供していません"
+                }else{
+                    if Int(String(describing:json["maxDelayInfos"][String(describing:data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID)]["maxDelay"]))! > 0{
+                        cell.DelayTime?.textColor = UIColor.red
+                    }else{ //遅れがない場合（最大遅れ時分が0の場合）は遅れがないことを表示する
+                        cell.DelayTime?.text? = "現在遅れはありません"
+                        cell.DelayTime?.textColor = UIColor.black
+                    }
                 }
             }
         }
@@ -198,18 +218,29 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let data = database.objects(LineData.self)
         let url = "https://dc.akbart.net/imadokotrain/linedata/line.json"
         var keepAlive = true
+        let metroURL = URL(string: "https://api.tokyometroapp.jp/api/v2/datapoints?rdf:type=odpt:Station&acl:consumerKey=5f95c806e61e454551b8cb6688a49dbd4b187b8c042bdf9d61c0fd1983a88091") //東京メトロの駅データ
+        Alamofire.request(metroURL!).responseJSON{response in
+            if response.result.value != nil{
+                self.ap.TokyoMetroStationData = JSON(response.result.value)
+                //print(self.ap.TokyoMetroStationData)
+            }
+        }
+        
         Alamofire.request(url).responseJSON{response in
             if response.result.value != nil{
                 try! database.write{
                     database.deleteAll()
                 }
                 let json = JSON(response.result.value)
-                //print(json)
+                print(json)
                 for i in 0...json["line"].count-1{
                     let basedata = LineData()
                     basedata.dataID = i
                     basedata.OperatorName = String(describing:json["line"][String(describing:i)]["company"])
                     basedata.lineID = Int(String(describing:json["line"][String(describing:i)]["LineID"]))!
+                    if Int(String(describing:json["line"][String(describing:i)]["LineID"]))! >= 10000{
+                        basedata.lineCode = String(describing:json["line"][String(describing:i)]["LineCode"])
+                    }
                     basedata.lineName = String(describing:json["line"][String(describing:i)]["Name"])
                     basedata.lineColor = String(describing:json["line"][String(describing:i)]["Color"])
                     if (Bool(String(describing:json["line"][String(describing:i)]["unique"]))) == true{
