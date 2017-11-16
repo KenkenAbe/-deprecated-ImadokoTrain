@@ -24,19 +24,44 @@ class LineData:Object{
     @objc dynamic var type = "" //データタイプ（例：JRE/京王->HTML 東急/東京メトロ->JSON）
 }
 
+class stationData:Object{
+    @objc dynamic var operatorName = "" //運行会社（例：東京メトロ→"TokyoMetro" 東急電鉄→"Tokyu"）
+    @objc dynamic var lineCode = "" //該当駅の路線コード（複数路線が乗り入れる駅も路線ごとに独立して登録）
+    @objc dynamic var stationID = 0 //路線内でのナンバリング（例：半蔵門線渋谷 -> Z01 -> 1）
+    @objc dynamic var stationName = "" //駅名
+    @objc dynamic var stationCode = "" //API内で使用されている駅名
+    @objc dynamic var bothStation = false //駅間か（東急が駅間も駅として情報を持っているため）（メトロは基本false）
+    @objc dynamic var stationColor = ""
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var firstLaunch = false
     var lineID = 0
+    var lineCode = ""
     var lineName = [String]()
     var TokyoMetroStationData:JSON? = nil
+    var lineColor = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       
+        let userDefault = UserDefaults.standard
+        // "firstLaunch"をキーに、Bool型の値を保持する
+        let dict = ["firstLaunch": true]
+        // デフォルト値登録
+        // ※すでに値が更新されていた場合は、更新後の値のままになる
+        userDefault.register(defaults: dict)
+        
+        // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
+        if userDefault.bool(forKey: "firstLaunch") {
+            userDefault.set(false, forKey: "firstLaunch")
+            self.firstLaunch = true
+        }
+        
         return true
     }
 

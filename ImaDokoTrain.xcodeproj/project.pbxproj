@@ -20,6 +20,18 @@
 		962E62251F9F0F960094F029 /* ImaDokoTrainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962E62241F9F0F960094F029 /* ImaDokoTrainUITests.swift */; };
 		963AD59A1FBDAB2E00FFAF6C /* other_stationDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5991FBDAB2E00FFAF6C /* other_stationDict.json */; };
 		963AD59C1FBDAB3400FFAF6C /* metro_stationDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 963AD59B1FBDAB3400FFAF6C /* metro_stationDict.json */; };
+		963AD5A71FBE204C00FFAF6C /* Fukutoshin in Resources */ = {isa = PBXBuildFile; fileRef = 963AD59E1FBE204B00FFAF6C /* Fukutoshin */; };
+		963AD5A81FBE204C00FFAF6C /* Hibiya in Resources */ = {isa = PBXBuildFile; fileRef = 963AD59F1FBE204B00FFAF6C /* Hibiya */; };
+		963AD5A91FBE204C00FFAF6C /* Chiyoda in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5A01FBE204B00FFAF6C /* Chiyoda */; };
+		963AD5AA1FBE204C00FFAF6C /* Ginza in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5A11FBE204B00FFAF6C /* Ginza */; };
+		963AD5AB1FBE204C00FFAF6C /* Tozai in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5A21FBE204C00FFAF6C /* Tozai */; };
+		963AD5AC1FBE204C00FFAF6C /* Yurakucho in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5A31FBE204C00FFAF6C /* Yurakucho */; };
+		963AD5AD1FBE204C00FFAF6C /* Marunouchi in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5A41FBE204C00FFAF6C /* Marunouchi */; };
+		963AD5AE1FBE204C00FFAF6C /* Hanzomon in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5A51FBE204C00FFAF6C /* Hanzomon */; };
+		963AD5AF1FBE204C00FFAF6C /* Namboku in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5A61FBE204C00FFAF6C /* Namboku */; };
+		963AD5B21FBE292B00FFAF6C /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5B01FBE292A00FFAF6C /* up.png */; };
+		963AD5B31FBE292B00FFAF6C /* low.png in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5B11FBE292B00FFAF6C /* low.png */; };
+		963AD5B51FBE31B300FFAF6C /* metro_direction.json in Resources */ = {isa = PBXBuildFile; fileRef = 963AD5B41FBE31B300FFAF6C /* metro_direction.json */; };
 		A1FB96D0B23FFEA02E3BF65B /* Pods_ImaDokoTrainUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF63CC3A27E957C08E2382C /* Pods_ImaDokoTrainUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +76,18 @@
 		962E62261F9F0F960094F029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		963AD5991FBDAB2E00FFAF6C /* other_stationDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = other_stationDict.json; sourceTree = "<group>"; };
 		963AD59B1FBDAB3400FFAF6C /* metro_stationDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = metro_stationDict.json; sourceTree = "<group>"; };
+		963AD59E1FBE204B00FFAF6C /* Fukutoshin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fukutoshin; sourceTree = "<group>"; };
+		963AD59F1FBE204B00FFAF6C /* Hibiya */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Hibiya; sourceTree = "<group>"; };
+		963AD5A01FBE204B00FFAF6C /* Chiyoda */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chiyoda; sourceTree = "<group>"; };
+		963AD5A11FBE204B00FFAF6C /* Ginza */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ginza; sourceTree = "<group>"; };
+		963AD5A21FBE204C00FFAF6C /* Tozai */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tozai; sourceTree = "<group>"; };
+		963AD5A31FBE204C00FFAF6C /* Yurakucho */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Yurakucho; sourceTree = "<group>"; };
+		963AD5A41FBE204C00FFAF6C /* Marunouchi */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Marunouchi; sourceTree = "<group>"; };
+		963AD5A51FBE204C00FFAF6C /* Hanzomon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Hanzomon; sourceTree = "<group>"; };
+		963AD5A61FBE204C00FFAF6C /* Namboku */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Namboku; sourceTree = "<group>"; };
+		963AD5B01FBE292A00FFAF6C /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		963AD5B11FBE292B00FFAF6C /* low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low.png; sourceTree = "<group>"; };
+		963AD5B41FBE31B300FFAF6C /* metro_direction.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = metro_direction.json; sourceTree = "<group>"; };
 		A6CB4D35F4AD1CAADD11B852 /* Pods-ImaDokoTrainUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrainUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrainUITests/Pods-ImaDokoTrainUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABBDD28E49235AC7680573BA /* Pods-ImaDokoTrainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaDokoTrainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImaDokoTrainTests/Pods-ImaDokoTrainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F703F5A07F2A193CC8BA5D89 /* Pods_ImaDokoTrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImaDokoTrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,15 +146,19 @@
 		962E62031F9F0F960094F029 /* ImaDokoTrain */ = {
 			isa = PBXGroup;
 			children = (
+				963AD59D1FBE203700FFAF6C /* Metro_icons */,
 				962E62041F9F0F960094F029 /* AppDelegate.swift */,
 				962E62061F9F0F960094F029 /* ViewController.swift */,
 				962E62081F9F0F960094F029 /* Main.storyboard */,
 				960FEEDC1FB08F7E00B09F12 /* TableViewCell.swift */,
 				962E620B1F9F0F960094F029 /* Assets.xcassets */,
+				963AD5B11FBE292B00FFAF6C /* low.png */,
+				963AD5B01FBE292A00FFAF6C /* up.png */,
 				962E620D1F9F0F960094F029 /* LaunchScreen.storyboard */,
 				962E62101F9F0F960094F029 /* Info.plist */,
 				963AD5991FBDAB2E00FFAF6C /* other_stationDict.json */,
 				963AD59B1FBDAB3400FFAF6C /* metro_stationDict.json */,
+				963AD5B41FBE31B300FFAF6C /* metro_direction.json */,
 				960FEEDE1FB09BC200B09F12 /* TohokuShinkansen.jpg */,
 			);
 			path = ImaDokoTrain;
@@ -152,6 +180,22 @@
 				962E62261F9F0F960094F029 /* Info.plist */,
 			);
 			path = ImaDokoTrainUITests;
+			sourceTree = "<group>";
+		};
+		963AD59D1FBE203700FFAF6C /* Metro_icons */ = {
+			isa = PBXGroup;
+			children = (
+				963AD5A01FBE204B00FFAF6C /* Chiyoda */,
+				963AD59E1FBE204B00FFAF6C /* Fukutoshin */,
+				963AD5A11FBE204B00FFAF6C /* Ginza */,
+				963AD5A51FBE204C00FFAF6C /* Hanzomon */,
+				963AD59F1FBE204B00FFAF6C /* Hibiya */,
+				963AD5A41FBE204C00FFAF6C /* Marunouchi */,
+				963AD5A61FBE204C00FFAF6C /* Namboku */,
+				963AD5A21FBE204C00FFAF6C /* Tozai */,
+				963AD5A31FBE204C00FFAF6C /* Yurakucho */,
+			);
+			path = Metro_icons;
 			sourceTree = "<group>";
 		};
 		9BC2A2062905B8E161073AE4 /* Frameworks */ = {
@@ -293,11 +337,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963AD5AD1FBE204C00FFAF6C /* Marunouchi in Resources */,
+				963AD5AB1FBE204C00FFAF6C /* Tozai in Resources */,
+				963AD5AE1FBE204C00FFAF6C /* Hanzomon in Resources */,
+				963AD5B51FBE31B300FFAF6C /* metro_direction.json in Resources */,
 				962E620F1F9F0F960094F029 /* LaunchScreen.storyboard in Resources */,
 				962E620C1F9F0F960094F029 /* Assets.xcassets in Resources */,
 				963AD59C1FBDAB3400FFAF6C /* metro_stationDict.json in Resources */,
+				963AD5AF1FBE204C00FFAF6C /* Namboku in Resources */,
+				963AD5B31FBE292B00FFAF6C /* low.png in Resources */,
+				963AD5AC1FBE204C00FFAF6C /* Yurakucho in Resources */,
+				963AD5A91FBE204C00FFAF6C /* Chiyoda in Resources */,
+				963AD5A71FBE204C00FFAF6C /* Fukutoshin in Resources */,
+				963AD5A81FBE204C00FFAF6C /* Hibiya in Resources */,
+				963AD5AA1FBE204C00FFAF6C /* Ginza in Resources */,
 				962E620A1F9F0F960094F029 /* Main.storyboard in Resources */,
 				960FEEDF1FB09BC300B09F12 /* TohokuShinkansen.jpg in Resources */,
+				963AD5B21FBE292B00FFAF6C /* up.png in Resources */,
 				963AD59A1FBDAB2E00FFAF6C /* other_stationDict.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImaDokoTrain/ViewController.swift"
-            timestampString = "532528856.5573"
+            timestampString = "532563056.128772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImaDokoTrain/ViewController.swift"
-            timestampString = "532528856.557789"
+            timestampString = "532563056.12946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -74,12 +74,330 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImaDokoTrain/ViewController.swift"
-            timestampString = "532528856.558065"
+            timestampString = "532563056.130062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.130581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.131028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.131474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.13192"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.13236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.132799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.133236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
+            landmarkName = "otherRailwayViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImaDokoTrain.otherRailwayViewController.mainView.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIScrollView&gt;"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532550825.136007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "445"
+                  endingLineNumber = "445"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImaDokoTrain.otherRailwayViewController.mainView.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIScrollView&gt;"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532550825.140014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "445"
+                  endingLineNumber = "445"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImaDokoTrain.otherRailwayViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ImaDokoTrain.otherRailwayViewController"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532550825.144231"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "445"
+                  endingLineNumber = "445"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImaDokoTrain.otherRailwayViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;ImaDokoTrain.otherRailwayViewController&gt;"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532550825.147217"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "445"
+                  endingLineNumber = "445"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.133679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "506"
+            endingLineNumber = "506"
+            landmarkName = "trainView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.134102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "570"
+            endingLineNumber = "570"
+            landmarkName = "StationView(stationName:currentHeight:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.134492"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
+            landmarkName = "StationView(stationName:currentHeight:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.134889"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
+            landmarkName = "GetTrainPos_Up()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.135252"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
+            landmarkName = "GetTrainPos_Up()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.135565"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "666"
+            endingLineNumber = "666"
+            landmarkName = "GetTrainPos_Down()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImaDokoTrain.otherRailwayViewController.GetTrainPos_Down() -&gt; ()"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532563041.563062"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "666"
+                  endingLineNumber = "666"
+                  offsetFromSymbolStart = "768">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImaDokoTrain.otherRailwayViewController.GetTrainPos_Down() -&gt; ()"
+                  moduleName = "ImaDokoTrain"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/OneDrive%20-%20ekenaly/Ga%E5%B0%82%E6%94%BB/ImaDokoTrain/ImaDokoTrain/ViewController.swift"
+                  timestampString = "532563041.570145"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "666"
+                  endingLineNumber = "666"
+                  offsetFromSymbolStart = "2428">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImaDokoTrain/ViewController.swift"
+            timestampString = "532563056.135852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "673"
+            endingLineNumber = "673"
+            landmarkName = "GetTrainPos_Down()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

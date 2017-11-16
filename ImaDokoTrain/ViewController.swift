@@ -162,15 +162,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 let json = JSON(response.result.value)
                 print(json)
                 cell.DelayTime?.text? = "最大遅れ時分：\(String(describing:json["maxDelayInfos"][String(describing:data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID)]["maxDelay"]))分"
-                if data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID >= 10000{
+                if data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID >= 10000{ //私鉄の場合は遅れ時分を表示しない
                     cell.DelayTime?.text? = "この路線は遅れ情報を提供していません"
                 }else{
-                    if Int(String(describing:json["maxDelayInfos"][String(describing:data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID)]["maxDelay"]))! > 0{
-                        cell.DelayTime?.textColor = UIColor.red
-                    }else{ //遅れがない場合（最大遅れ時分が0の場合）は遅れがないことを表示する
-                        cell.DelayTime?.text? = "現在遅れはありません"
+                    if json["maxDelayInfos"][String(describing:data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID)]["maxDelay"] != nil{
+                        if Int(String(describing:json["maxDelayInfos"][String(describing:data.sorted(byKeyPath: "dataID", ascending: true)[indexPath.row].lineID)]["maxDelay"]))! > 0{
+                            cell.DelayTime?.textColor = UIColor.red
+                        }else{ //遅れがない場合（最大遅れ時分が0の場合）は遅れがないことを表示する
+                            cell.DelayTime?.text? = "現在遅れはありません"
+                            cell.DelayTime?.textColor = UIColor.black
+                        }
+                    }else{
+                        cell.DelayTime?.text? = "遅れ情報を取得できませんでした"
                         cell.DelayTime?.textColor = UIColor.black
                     }
+                    
                 }
             }
         }
@@ -203,10 +209,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let database = try! Realm()
         let data = database.objects(LineData.self).sorted(byKeyPath: "dataID", ascending: true)
         self.ap.lineID = data[indexPath.row].lineID
-        
+        if self.ap.lineID >= 10000{ //私鉄の場合はlineCodeも引き渡し
+            self.ap.lineCode = data[indexPath.row].lineCode
+        }
+        self.ap.lineColor = data[indexPath.row].lineColor
         let storyboard: UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "TrainView") as! TrainController //画面遷移
-        self.present(nextView, animated: true, completion: nil)
+        if self.ap.lineID < 10000{ //JRの場合はWebKitを備えた画面に遷移
+            let nextView = storyboard.instantiateViewController(withIdentifier: "TrainView") as! TrainController //画面遷移
+            self.present(nextView, animated: true, completion: nil)
+        }else{ //私鉄の場合は独自UIを生成するため、別画面に遷移
+            let nextView = storyboard.instantiateViewController(withIdentifier: "OtherRailway") as! otherRailwayViewController //画面遷移
+            self.present(nextView, animated: true, completion: nil)
+        }
+        
     }
     
     
@@ -272,6 +287,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             runLoop.run(mode: RunLoopMode.defaultRunLoopMode, before: NSDate(timeIntervalSinceNow: 0.1) as Date) {
                 // 0.1秒毎の処理なので、処理が止まらない
         }
+        
         print(data)
         for i in 0...data.count-1{
             print(data[i].lineName)
@@ -354,8 +370,11 @@ class TrainController:UIViewController,WKUIDelegate{
         
         //Viewに追加
         self.view.addSubview(ActivityIndicator)
-        
-        webView(lineID: self.ap.lineID)
+        if self.ap.lineID >= 10000{
+            
+        }else{
+            webView(lineID: self.ap.lineID)
+        }
     }
     
     @IBAction func Close(_ sender: Any) {
@@ -365,10 +384,18 @@ class TrainController:UIViewController,WKUIDelegate{
     }
     
     @IBAction func renew(_ sender: Any) {
-        webView(lineID: self.ap.lineID)
+        if self.ap.lineID >= 10000{
+            
+        }else{
+            webView(lineID: self.ap.lineID)
+        }
     }
     
-    func webView(lineID:Int){
+    func MetroLineView(lineCode:String){
+        
+    }
+    
+    func webView(lineID:Int){ //JR線の場合の路線情報更新
         self.Web.uiDelegate = self
         //self.Web = WKWebView()
         ActivityIndicator.startAnimating()
@@ -393,6 +420,283 @@ class TrainController:UIViewController,WKUIDelegate{
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func JsonGet(fileName :String) -> JSON {
+        let path = Bundle.main.path(forResource: fileName, ofType: "json")
+        print(path)
+        
+        do{
+            let jsonStr = try String(contentsOfFile: path!)
+            print(jsonStr)
+            
+            let json = JSON.parse(jsonStr)
+            
+            return json
+        } catch {
+            return nil
+        }
+        
+    }
+}
+
+class otherRailwayViewController:UIViewController,UIScrollViewDelegate{
+    
+    @IBOutlet var mainView: UIScrollView!
+    
+    @IBOutlet var Bar: UINavigationBar!
+    
+    
+    @IBAction func renew(_ sender: Any) {
+        trainView()
+    }
+    
+    
+    let ap = UIApplication.shared.delegate as! AppDelegate
+    var lineCode = "" //
+    var NetworkOperator = ""
+    var mainViewWidth = CGFloat(0.0)
+    var mainViewHeight = CGFloat(0.0)
+    let TokyoMetro_AccessToken = "5f95c806e61e454551b8cb6688a49dbd4b187b8c042bdf9d61c0fd1983a88091" //アクセストークン（東京メトロの場合のみ使用）
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        
+        lineCode = self.ap.lineCode
+        let database = try! Realm()
+        let data = database.objects(LineData.self).sorted(byKeyPath: "lineID", ascending: true)
+        
+        for i in 0...data.count-1{
+            if data[i].lineCode != ""{
+                if data[i].lineCode == self.lineCode{
+                    self.NetworkOperator = data[i].OperatorName
+                }
+            }
+        }
+        trainView()
+        mainView.delegate = self
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func trainView() {
+        let viewes = self.mainView.subviews
+        for viewes in viewes {
+            viewes.removeFromSuperview()
+        }
+        self.mainViewWidth = self.mainView.frame.width
+        self.mainViewHeight = self.mainView.frame.height
+        let database = try! Realm()
+        var trainPositionData:JSON? = nil
+        var keepAlive = true
+        
+        switch NetworkOperator{
+        case "TokyoMetro":
+            let url = URL(string:"https://api.tokyometroapp.jp/api/v2/datapoints?rdf:type=odpt:Train&odpt:railway=\(self.lineCode)&acl:consumerKey=\(self.TokyoMetro_AccessToken)")
+            Alamofire.request(url!).responseJSON{response in
+                
+                let database = try! Realm()
+                let url = URL(string:"https://api.tokyometroapp.jp/api/v2/datapoints?rdf:type=odpt:Station&odpt:railway=\(self.lineCode)&acl:consumerKey=5f95c806e61e454551b8cb6688a49dbd4b187b8c042bdf9d61c0fd1983a88091")
+                Alamofire.request(url!).responseJSON{response in
+                    let response = JSON(response.result.value)
+                    //print(response)
+                    print("路線の駅データ：\(response[].count)件")
+                    if database.objects(stationData.self).filter("lineCode == %@",self.lineCode).count >= 1{
+                        for i in 0...database.objects(stationData.self).filter("lineCode == %@",self.lineCode).count-1{
+                            try! Realm().write {
+                                database.delete(database.objects(stationData.self).filter("lineCode == %@",self.lineCode).first!)
+                            }
+                        }
+                    }
+                    
+                    let lineNum = response[].count-1
+                    for j in 0...lineNum{
+                        let obj = stationData()
+                        obj.lineCode = self.lineCode
+                        obj.stationName = String(describing:response[j]["dc:title"])
+                        obj.stationCode = String(describing:response[j]["owl:sameAs"])
+                        obj.operatorName = "TokyoMetro"
+                        var stationCode = String(describing:response[j]["odpt:stationCode"])
+                        stationCode.remove(at: stationCode.startIndex)
+                        print(stationCode)
+                        obj.stationID = Int(stationCode)!
+                        obj.stationColor = ""
+                        
+                        try! Realm().write {
+                            database.add(obj)
+                        }
+                    }
+                    keepAlive = false
+                }
+                
+                
+            }
+        default:
+            break
+        }
+        
+        
+        let runLoop = RunLoop.current
+        while keepAlive &&
+            runLoop.run(mode: RunLoopMode.defaultRunLoopMode, before: NSDate(timeIntervalSinceNow: 0.1) as Date) {
+                // 0.1秒毎の処理なので、処理が止まらない
+        }
+        let data = database.objects(stationData.self).filter("lineCode == %@",self.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+        print(data)
+        var currentHeight = CGFloat(0.0)
+        for i in 0...data.count-1{
+            print(data[i].stationName)
+            print(data[i].stationCode)
+            let current = StationView(stationName: data[i].stationName, currentHeight: currentHeight)
+            currentHeight += CGFloat(50)
+            if i != data.count{
+                let bothCurrent = bothStationView(stationName: data[i].stationName, currentHeight: currentHeight)
+                currentHeight += CGFloat(50)
+            }
+        }
+        
+        self.mainView.frame.size = CGSize(width: self.mainViewWidth, height: CGFloat(50*data.count)*2)
+        self.mainView.contentSize = CGSize(width: self.mainViewWidth, height: CGFloat(50*data.count)*2)
+        self.mainView.bounces = true
+        self.mainView.indicatorStyle = .black
+        self.view.addSubview(self.mainView)
+        GetTrainPos_Up()
+        GetTrainPos_Down()
+    }
+    
+    func StationView(stationName:String,currentHeight:CGFloat) -> CGFloat{
+        let lineColor = self.ap.lineColor
+        let color = UIColor(hex:lineColor,alpha:1.0)
+        let size = CGSize(width: 10, height: 50)
+        let colorImage = UIImage.image(color: color, size: size)
+        var frame:CGRect = CGRect(x: (self.mainViewWidth/3)*2, y:currentHeight, width: 10, height: 50)
+        var image = UIImageView(frame: frame)
+        var textFrame:CGRect = CGRect(x: 10, y: currentHeight+10, width: 200, height: 50)
+        var str = UITextView(frame:textFrame)
+        str.isSelectable = true
+        
+        var separateLine = UIImageView.init(image:(UIImage.image(color: UIColor.black, size: CGSize(width: self.mainViewWidth, height: CGFloat(5)))))
+        
+        separateLine.frame = CGRect(x: 0, y:currentHeight-25, width: self.mainViewWidth, height: CGFloat(0.5))
+        separateLine.alpha = CGFloat(0.07)
+       
+        str.text = stationName
+         str.font = str.font?.withSize(CGFloat(15.0))
+        image.image = colorImage
+        
+        
+        self.mainView.addSubview(image)
+        self.mainView.addSubview(str)
+        self.mainView.addSubview(separateLine)
+        
+        return (frame.minY+frame.maxY)/2
+    }
+    
+    func bothStationView(stationName:String,currentHeight:CGFloat) -> CGFloat{
+        let lineColor = self.ap.lineColor
+        let color = UIColor(hex:lineColor,alpha:1.0)
+        let size = CGSize(width: 10, height: 50)
+        let colorImage = UIImage.image(color: color, size: size)
+        var frame:CGRect = CGRect(x: (self.mainViewWidth/3)*2, y:currentHeight, width: 10, height: 50)
+        var image = UIImageView(frame: frame)
+        var textFrame:CGRect = CGRect(x: 10, y: currentHeight+10, width: 200, height: 50)
+        var str = UITextView(frame:textFrame)
+        str.isSelectable = true
+        
+        //str.text = stationName
+        str.font = str.font?.withSize(CGFloat(15.0))
+        image.image = colorImage
+        var separateLine = UIImageView.init(image:(UIImage.image(color: UIColor.black, size: CGSize(width: self.mainViewWidth, height: CGFloat(5)))))
+        
+        separateLine.frame = CGRect(x: 0, y:currentHeight-25, width: self.mainViewWidth, height: CGFloat(0.5))
+        separateLine.alpha = CGFloat(0.07)
+        
+        self.mainView.addSubview(image)
+        self.mainView.addSubview(separateLine)
+        
+        return (frame.minY+frame.maxY)/2
+    }
+    
+    func GetTrainPos_Up(){
+        let json = JsonGet(fileName: "metro_direction")
+        let data = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+        
+        let dist = String(describing:json[(data.first?.stationCode)!])
+        let url = URL(string:"https://api.tokyometroapp.jp/api/v2/datapoints?rdf:type=odpt:Train&odpt:railway=\(self.lineCode)&odpt:railDirection=\(dist)&acl:consumerKey=\(self.TokyoMetro_AccessToken)")
+        
+        //print(url)
+        
+        Alamofire.request(url!).responseJSON{response in
+            print(response.result.value)
+            let data = JSON(response.result.value)
+            for i in 0...data.count-1{
+                print(data[i]["odpt:trainNumber"])
+                let lineData = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+                if data[i]["odpt:toStation"] != nil{
+                    for j in 0...lineData.count-1{
+                        if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                            let train_image = UIImageView.init(image: #imageLiteral(resourceName: "up.png"))
+                            train_image.frame = CGRect(x: (self.mainViewWidth/3)*2-20, y: CGFloat((50*2*j+10)-50), width: CGFloat(15), height: CGFloat(25))
+                            train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                            self.mainView.addSubview(train_image)
+                        }
+                    }
+                    
+                }else{
+                    for j in 0...lineData.count-1{
+                        if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                            let train_image = UIImageView.init(image: #imageLiteral(resourceName: "up.png"))
+                            train_image.frame = CGRect(x: (self.mainViewWidth/3)*2-20, y: CGFloat(50*2*j+10), width: CGFloat(15), height: CGFloat(25))
+                            train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                            self.mainView.addSubview(train_image)
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    func GetTrainPos_Down(){
+        let json = JsonGet(fileName: "metro_direction")
+        let data = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+        
+        let dist = String(describing:json[(data.last?.stationCode)!])
+        let url = URL(string:"https://api.tokyometroapp.jp/api/v2/datapoints?rdf:type=odpt:Train&odpt:railway=\(self.lineCode)&odpt:railDirection=\(dist)&acl:consumerKey=\(self.TokyoMetro_AccessToken)")
+        
+        //print(url)
+        
+        Alamofire.request(url!).responseJSON{response in
+            print(response.result.value)
+            let data = JSON(response.result.value)
+            for i in 0...data.count-1{
+                print(data[i]["odpt:trainNumber"])
+                let lineData = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+                if data[i]["odpt:toStation"] != nil{
+                    for j in 0...lineData.count-1{
+                        if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                            let train_image = UIImageView.init(image: #imageLiteral(resourceName: "low.png"))
+                            train_image.frame = CGRect(x: (self.mainViewWidth/3)*2+20, y: CGFloat((50*2*j+10)-50), width: CGFloat(15), height: CGFloat(25))
+                            train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                            self.mainView.addSubview(train_image)
+                        }
+                    }
+                    
+                }else{
+                    for j in 0...lineData.count-1{
+                        if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                            let train_image = UIImageView.init(image: #imageLiteral(resourceName: "low.png"))
+                            train_image.frame = CGRect(x: (self.mainViewWidth/3)*2+20, y: CGFloat(50*2*j+10), width: CGFloat(15), height: CGFloat(25))
+                            train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                            self.mainView.addSubview(train_image)
+                        }
+                    }
+                }
+                
+            }
+        }
     }
     
     func JsonGet(fileName :String) -> JSON {
