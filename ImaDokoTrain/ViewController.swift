@@ -562,8 +562,12 @@ class otherRailwayViewController:UIViewController,UIScrollViewDelegate{
         self.mainView.bounces = true
         self.mainView.indicatorStyle = .black
         self.view.addSubview(self.mainView)
-        GetTrainPos_Up()
-        GetTrainPos_Down()
+        let alert = UIAlertController(title: "少々お待ちください", message: "", preferredStyle: .alert)
+        self.present(alert,animated:true)
+        /*GetTrainPos_Up()
+        GetTrainPos_Down()*/
+        GetTrain()
+        alert.dismiss(animated: true, completion: nil)
     }
     
     func StationView(stationName:String,currentHeight:CGFloat) -> CGFloat{
@@ -581,9 +585,9 @@ class otherRailwayViewController:UIViewController,UIScrollViewDelegate{
         
         separateLine.frame = CGRect(x: 0, y:currentHeight-25, width: self.mainViewWidth, height: CGFloat(0.5))
         separateLine.alpha = CGFloat(0.07)
-       
+        
         str.text = stationName
-         str.font = str.font?.withSize(CGFloat(15.0))
+        str.font = str.font?.withSize(CGFloat(15.0))
         image.image = colorImage
         
         
@@ -593,7 +597,6 @@ class otherRailwayViewController:UIViewController,UIScrollViewDelegate{
         
         return (frame.minY+frame.maxY)/2
     }
-    
     func bothStationView(stationName:String,currentHeight:CGFloat) -> CGFloat{
         let lineColor = self.ap.lineColor
         let color = UIColor(hex:lineColor,alpha:1.0)
@@ -618,6 +621,155 @@ class otherRailwayViewController:UIViewController,UIScrollViewDelegate{
         
         return (frame.minY+frame.maxY)/2
     }
+    let train_image = UIButton()
+    
+    func GetTrain(){
+        let json = JsonGet(fileName: "metro_direction")
+        let data = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+        
+        let url = URL(string:"https://api.tokyometroapp.jp/api/v2/datapoints?rdf:type=odpt:Train&odpt:railway=\(self.lineCode)&acl:consumerKey=\(self.TokyoMetro_AccessToken)")
+        print(String(describing:self.JsonGet(fileName: "other_stationDict")))
+        Alamofire.request(url!).responseJSON{response in
+            print(response.result.value)
+            let data = JSON(response.result.value)
+            var keepAlive = true
+            if data.count >= 1{
+                keepAlive = false
+            }
+            let runLoop = RunLoop.current
+            while keepAlive &&
+                runLoop.run(mode: RunLoopMode.defaultRunLoopMode, before: NSDate(timeIntervalSinceNow: 0.1) as Date) {
+                    // 0.1秒毎の処理なので、処理が止まらない
+                    print("処理を待っています")
+            }
+            for i in 0...data.count-1{
+                print(data[i]["odpt:railDirection"])
+                let StationData = try! Realm()
+                let StationDataAlias = StationData.objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+                
+                let firstStation = StationDataAlias.first?.stationCode
+                let lastStation = StationDataAlias.last?.stationCode
+                
+                let UpStr = String(describing:json[firstStation!])
+                let DownStr = String(describing:json[lastStation!])
+                //print("この路線の01方面は\(UpStr), 最終方面は\(DownStr)")
+                if String(describing:data[i]["odpt:railDirection"]) == UpStr{ //下から上に
+                    let lineData = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+                    if data[i]["odpt:toStation"] != nil{
+                        for j in 0...lineData.count-1{
+                            if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                                let train_image = UIImageView.init(image: #imageLiteral(resourceName: "up.png"))
+                                train_image.frame = CGRect(x: (self.mainViewWidth/3)*2-40, y: CGFloat((50*2*j+10)-50), width: CGFloat(15), height: CGFloat(25))
+                                train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                                let destinationTxt = UILabel(frame: CGRect(x: (train_image.frame.maxX+train_image.frame.minX)/2, y: train_image.frame.maxY-25, width: CGFloat(100), height: CGFloat(30)))
+                                let dest_stationStr = String(describing:data[i]["odpt:terminalStation"])
+                                var destinationStr = ""
+                                if dest_stationStr.contains("TokyoMetro"){
+                                    let strs = dest_stationStr.components(separatedBy: ".")
+                                    destinationStr = String(describing:self.JsonGet(fileName: "metro_stationDict")[strs[3]])
+                                    //destinationStr = strs[3]
+                                }else{
+                                    destinationStr = String(describing:self.JsonGet(fileName: "other_stationDict")[dest_stationStr])
+                                }
+                                
+                                print(dest_stationStr)
+                                destinationTxt.text = destinationStr
+                                
+                                self.mainView.addSubview(train_image)
+                                self.mainView.addSubview(destinationTxt)
+                            }
+                        }
+                        
+                    }else{
+                        for j in 0...lineData.count-1{
+                            if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                                let train_image = UIImageView.init(image: #imageLiteral(resourceName: "up.png"))
+                                train_image.frame = CGRect(x: (self.mainViewWidth/3)*2-40, y: CGFloat(50*2*j+10), width: CGFloat(15), height: CGFloat(25))
+                                train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                                let destinationTxt = UILabel(frame: CGRect(x: (train_image.frame.maxX+train_image.frame.minX)/2, y: train_image.frame.maxY-25, width: CGFloat(100), height: CGFloat(30)))
+                                let dest_stationStr = String(describing:data[i]["odpt:terminalStation"])
+                                var destinationStr = ""
+                                if dest_stationStr.contains("TokyoMetro"){
+                                    let strs = dest_stationStr.components(separatedBy: ".")
+                                    destinationStr = String(describing:self.JsonGet(fileName: "metro_stationDict")[strs[3]])
+                                }else{
+                                    destinationStr = String(describing:self.JsonGet(fileName: "other_stationDict")[dest_stationStr])
+                                }
+                                
+                                print(dest_stationStr)
+                                destinationTxt.text = destinationStr
+                                
+                                self.mainView.addSubview(train_image)
+                                self.mainView.addSubview(destinationTxt)
+                            }
+                        }
+                    }
+                    
+                }else{ //上から下に
+                    
+                    print(data[i]["odpt:trainNumber"])
+                    let lineData = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
+                    if data[i]["odpt:toStation"] != nil{
+                        for j in 0...lineData.count-1{
+                            if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                                let train_image = UIImageView.init(image: #imageLiteral(resourceName: "low.png"))
+                                train_image.frame = CGRect(x: (self.mainViewWidth/3)*2+40, y: CGFloat((50*2*j+10)-50), width: CGFloat(15), height: CGFloat(25))
+                                train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                                let destinationTxt = UILabel(frame: CGRect(x: (train_image.frame.maxX+train_image.frame.minX)/2, y: train_image.frame.maxY-25, width: CGFloat(100), height: CGFloat(30)))
+                                let dest_stationStr = String(describing:data[i]["odpt:terminalStation"])
+                                var destinationStr = ""
+                                if dest_stationStr.contains("TokyoMetro"){
+                                    let strs = dest_stationStr.components(separatedBy: ".")
+                                    destinationStr = String(describing:self.JsonGet(fileName: "metro_stationDict")[strs[3]])
+                                }else{
+                                    destinationStr = String(describing:self.JsonGet(fileName: "other_stationDict")[dest_stationStr])
+                                }
+                                
+                                print(dest_stationStr)
+                                destinationTxt.text = destinationStr
+                                
+                                self.mainView.addSubview(train_image)
+                                self.mainView.addSubview(destinationTxt)
+                            }
+                        }
+                        
+                    }else{
+                        for j in 0...lineData.count-1{
+                            if String(describing:data[i]["odpt:fromStation"]) == lineData[j].stationCode{
+                                
+                                let train_image = UIImageView.init(image: #imageLiteral(resourceName: "low.png"))
+                                train_image.frame = CGRect(x: (self.mainViewWidth/3)*2+40, y: CGFloat((50*2*j+10)-50), width: CGFloat(15), height: CGFloat(25))
+                                train_image.tintColor = UIColor(hex:self.ap.lineColor,alpha:1.0)
+                                let destinationTxt = UILabel(frame: CGRect(x: (train_image.frame.maxX+train_image.frame.minX)/2, y: train_image.frame.maxY-25, width: CGFloat(100), height: CGFloat(30)))
+                                let dest_stationStr = String(describing:data[i]["odpt:terminalStation"])
+                                var destinationStr = ""
+                                if dest_stationStr.contains("TokyoMetro"){
+                                    let strs = dest_stationStr.components(separatedBy: ".")
+                                    destinationStr = String(describing:self.JsonGet(fileName: "metro_stationDict")[strs[3]])
+                                }else{
+                                    destinationStr = String(describing:self.JsonGet(fileName: "other_stationDict")[dest_stationStr])
+                                }
+                                
+                                print(dest_stationStr)
+                                destinationTxt.text = destinationStr
+                                
+                                self.mainView.addSubview(train_image)
+                                self.mainView.addSubview(destinationTxt)
+                                
+                                
+                            }
+                        }
+                    }
+                    
+                    
+                }
+            }
+        }
+    }
+    
+    @objc func buttonTapped(sender:AnyObject){
+        
+    }
     
     func GetTrainPos_Up(){
         let json = JsonGet(fileName: "metro_direction")
@@ -631,6 +783,16 @@ class otherRailwayViewController:UIViewController,UIScrollViewDelegate{
         Alamofire.request(url!).responseJSON{response in
             print(response.result.value)
             let data = JSON(response.result.value)
+            var keepAlive = true
+            if data.count >= 1{
+                keepAlive = false
+            }
+            let runLoop = RunLoop.current
+            while keepAlive &&
+                runLoop.run(mode: RunLoopMode.defaultRunLoopMode, before: NSDate(timeIntervalSinceNow: 0.1) as Date) {
+                    // 0.1秒毎の処理なので、処理が止まらない
+                    print("処理を待っています")
+            }
             for i in 0...data.count-1{
                 print(data[i]["odpt:trainNumber"])
                 let lineData = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
@@ -671,6 +833,17 @@ class otherRailwayViewController:UIViewController,UIScrollViewDelegate{
         Alamofire.request(url!).responseJSON{response in
             print(response.result.value)
             let data = JSON(response.result.value)
+            var keepAlive = true
+            if data.count >= 1{
+                keepAlive = false
+            }
+            
+            let runLoop = RunLoop.current
+            while keepAlive &&
+                runLoop.run(mode: RunLoopMode.defaultRunLoopMode, before: NSDate(timeIntervalSinceNow: 0.1) as Date) {
+                    // 0.1秒毎の処理なので、処理が止まらない
+                    print("処理を待っています")
+            }
             for i in 0...data.count-1{
                 print(data[i]["odpt:trainNumber"])
                 let lineData = try! Realm().objects(stationData.self).filter("lineCode == %@",self.ap.lineCode).sorted(byKeyPath: "stationID", ascending: true)
